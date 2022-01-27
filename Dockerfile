@@ -14,6 +14,8 @@ RUN tar -xf autodl-irssi-community.tar.gz
 WORKDIR /home/user/autodl-irssi-community
 RUN makepkg -s -c --noconfirm autodl-irssi-community.install
 RUN sudo pacman -U *pkg.tar.zst --noconfirm
+
+WORKDIR /home/user
 RUN rm -rf autodl*
 
 RUN mkdir -p ~/.irssi/scripts/autorun

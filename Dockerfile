@@ -2,7 +2,7 @@ FROM archlinux:latest
 MAINTAINER uzkodb
 
 USER root
-RUN pacman -Syu base-devel  --noconfirm
+RUN pacman -Syu base-devel --noconfirm
 RUN useradd -m user
 RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 

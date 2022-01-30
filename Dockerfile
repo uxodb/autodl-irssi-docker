@@ -16,7 +16,10 @@ RUN makepkg -s -c --noconfirm autodl-irssi-community.install
 RUN sudo pacman -U *pkg.tar.zst --noconfirm
 
 WORKDIR /home/user
-RUN rm -rf autodl*
+RUN curl -L -O https://github.com/autodl-community/autodl-trackers/archive/refs/tags/v284.tar.gz
+RUN tar -xvf v284.tar.gz
+RUN mv ~/autodl-trackers-284/trackers/ ~/.irssi/scripts/AutodlIrssi/trackers
+RUN rm -rf autodl* *tar.gz
 
 RUN mkdir ~/watchdir
 RUN mkdir -p ~/.irssi/scripts/autorun

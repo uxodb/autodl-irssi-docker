@@ -18,8 +18,6 @@ RUN sudo pacman -U *pkg.tar.zst --noconfirm
 WORKDIR /home/user
 RUN curl -L -O https://github.com/autodl-community/autodl-trackers/archive/refs/tags/v284.tar.gz
 RUN tar -xvf v284.tar.gz
-RUN mv ~/autodl-trackers-284/trackers/ ~/.irssi/scripts/AutodlIrssi/trackers
-RUN rm -rf autodl* *tar.gz
 
 RUN mkdir ~/watchdir
 RUN mkdir -p ~/.irssi/scripts/autorun
@@ -27,6 +25,8 @@ RUN mkdir ~/.autodl
 RUN touch ~/.autodl/autodl.cfg
 RUN ln -s /usr/share/autodl-irssi/autodl-irssi.pl ~/.irssi/scripts/autorun/autodl-irssi.pl
 RUN cp -R /usr/share/autodl-irssi/AutodlIrssi/ ~/.irssi/scripts/
+RUN mv ~/autodl-trackers-284/trackers ~/.irssi/scripts/AutodlIrssi/
+RUN rm -rf autodl* *tar.gz
 
 ENV TERM=xterm-256color
 

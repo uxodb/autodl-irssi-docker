@@ -18,6 +18,7 @@ RUN sudo pacman -U *pkg.tar.zst --noconfirm
 WORKDIR /home/user
 RUN rm -rf autodl*
 
+RUN mkdir ~/watchdir
 RUN mkdir -p ~/.irssi/scripts/autorun
 RUN mkdir ~/.autodl
 RUN touch ~/.autodl/autodl.cfg

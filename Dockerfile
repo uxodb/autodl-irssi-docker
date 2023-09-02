@@ -1,5 +1,5 @@
 FROM archlinux:latest
-MAINTAINER uzkodb
+MAINTAINER uxodb
 
 USER root
 RUN pacman -Syu base-devel --noconfirm
